@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDS | Command Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --primary: #004a99;
+            --success: #10b981;
+            --slate-50: #f8fafc;
+            --slate-200: #e2e8f0;
+            --slate-600: #475569;
+            --slate-800: #1e293b;
+        }
+
+        /* GRILLA OPTIMIZADA: Más columnas y mejor flujo */
+        .career-grid-professional {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* TÍTULOS DE SECCIÓN REFINADOS */
+        .grid-section-title {
+            grid-column: 1 / -1;
+            font-size: 0.85rem;
+            color: var(--slate-600);
+            font-weight: 800;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--slate-200);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* TARJETA PROFESIONAL V3: Diseño Ultra-Limpio */
+        .career-card-v3 {
+            position: relative;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid var(--slate-200);
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            display: flex;
+            flex-direction: column;
+            height: 180px; /* Altura fija para consistencia */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .career-card-v3:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
+        }
+
+        /* BADGE FLOTANTE */
+        .badge-new-plan {
+            background: #dcfce7;
+            color: #166534;
+            font-size: 0.6rem;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 800;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            border: 1px solid #86efac;
+        }
+
+        .card-tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .icon-box {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .career-card-v3:hover .icon-box {
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        .career-card-v3 h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--slate-800);
+            margin: 0 0 4px 0;
+            line-height: 1.2;
+        }
+
+        .career-card-v3 p {
+            font-size: 0.8rem;
+            color: var(--slate-600);
+            margin: 0;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        /* FOOTER COMPACTO */
+        .card-footer {
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid var(--slate-50);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #94a3b8;
+        }
+
+        .arrow {
+            color: var(--primary);
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .career-card-v3:hover .arrow {
+            transform: translateX(3px);
+        }
+
+        /* VARIANTES POR FACULTAD */
+        .card-ing { color: var(--primary); }
+        .card-emp { color: #f59e0b; }
+        .card-jur { color: #6366f1; }
+        .card-hum { color: #ec4899; }
+
+        .career-card-v3.new {
+            background: linear-gradient(to bottom right, #ffffff, #f0fdf4);
+            border-left: 3px solid var(--success);
+        }
+    </style>
+</head>
+<body class="admin-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="img/upds_logo2.png" alt="UPDS" class="logo-centered">
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="active"><span class="nav-icon">⊞</span>PROGRAMACIÓN</a>
+            <a href="view-mallas.html"><span class="nav-icon">📁</span> MALLAS</a>
+            <a href="view-aulas.html"><span class="nav-icon">🏫</span> ASIGNACIÓN DE AULAS</a>
+            <a href="view-configuracion.html"><span class="nav-icon">⚙️</span> CONFIGURACIÓN</a>
+            <a href="view-reportes.html" class="nav-icon"><span class="nav-icon">📊</span> REPORTES</a>
+            <a href="informaciones.html" class="nav-icon"><span class="nav-icon">ℹ️</span> INFORMACIONES</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-pill">
+                <div class="avatar">Area Academica</div>
+                <span>Sección de Registros</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="content-header">
+            <div class="header-titles">
+                <h1>Planificación Académica</h1>
+                <p>Gestión de oferta y proyecciones 2026</p>
+            </div>
+            
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="career-search" placeholder="Buscar carrera...">
+            </div>
+
+            <div class="header-date">
+                <span>Sede Cochabamba</span>
+            </div>
+        </header>
+
+        <section class="welcome-banner">
+            <div class="banner-text">
+                <h2>Panel de Control Central</h2>
+                <p>Proyecte la programación académica oficial seleccionando una carrera.</p>
+            </div>
+        </section>
+
+        <div class="grid-container">
+            <div class="career-grid-professional">
+                
+                <h2 class="grid-section-title">📂 Carreras Anteriores</h2>
+
+                <a href="visor.html?carrera=REDES" class="career-card-v3">
+                    <div class="card-tag card-ing">Ingeniería</div>
+                    <div class="card-body">
+                        <div class="icon-box">📡</div>
+                        <h3>Ing. en Redes</h3>
+                        <p>Malla Antigua</p>
+                    </div>
+                    <div class="card-footer"><span>9 Semestres</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=SISTEMAS" class="career-card-v3">
+                    <div class="card-tag card-ing">Ingeniería</div>
+                    <div class="card-body">
+                        <div class="icon-box">💻</div>
+                        <h3>Ing. de Sistemas</h3>
+                        <p>Malla Antigua</p>
+                    </div>
+                    <div class="card-footer"><span>9 Semestres</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=INDUSTRIAL" class="career-card-v3">
+                    <div class="card-tag card-ing">Ingeniería</div>
+                    <div class="card-body">
+                        <div class="icon-box">⚙️</div>
+                        <h3>Ing. Industrial</h3>
+                        <p>Malla Antigua</p>
+                    </div>
+                    <div class="card-footer"><span>9 Semestres</span><span class="arrow">→</span></div>
+                </a>
+                <a href="visor.html?carrera=PETROLERA" class="career-card-v3">
+                    <div class="card-tag card-ing">Ingeniería</div>
+                    <div class="card-body">
+                        <div class="icon-box">🏗️</div>
+                        <h3>Ing. Petrolera</h3>
+                        <p>Malla Antigua</p>
+                    </div>
+                    <div class="card-footer"><span>9 Semestres</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=COMERCIAL" class="career-card-v3">
+                    <div class="card-tag card-emp">Empresariales</div>
+                    <div class="card-body">
+                        <div class="icon-box">📊</div>
+                        <h3>Ing. Comercial</h3>
+                        <p>Malla Antigua</p>
+                    </div>
+                    <div class="card-footer"><span>8 Semestres</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=DERECHO" class="career-card-v3">
+                    <div class="card-tag card-jur">Jurídicas</div>
+                    <div class="card-body">
+                        <div class="icon-box">⚖️</div>
+                        <h3>Derecho</h3>
+                        <p>Malla Antigua</p>
+                    </div>
+                    <div class="card-footer"><span>8 Semestres</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=PSICOLOGIA" class="career-card-v3">
+                    <div class="card-tag card-hum">Humanidades</div>
+                    <div class="card-body">
+                        <div class="icon-box">🧠</div>
+                        <h3>Psicología</h3>
+                        <p>Malla Antigua</p>
+                    </div>
+                    <div class="card-footer"><span>8 Semestres</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=ADMINISTRACION" class="career-card-v3">
+                    <div class="card-tag card-emp">Empresariales</div>
+                    <div class="card-body">
+                        <div class="icon-box">💼</div>
+                        <h3>Adm. de Empresas</h3>
+                        <p>Malla Antigua</p>
+                    </div>
+                    <div class="card-footer"><span>8 Semestres</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=COMUNICACION" class="career-card-v3">
+                    <div class="card-tag card-hum">Humanidades</div>
+                    <div class="card-body">
+                        <div class="icon-box">🎙️</div>
+                        <h3>Comunicación Social</h3>
+                        <p>Malla Antigua</p>
+                    </div>
+                    <div class="card-footer"><span>8 Semestres</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=CONTADURIA" class="career-card-v3">
+                    <div class="card-tag card-emp">Empresariales</div>
+                    <div class="card-body">
+                        <div class="icon-box">🧾</div>
+                        <h3>Contaduría Pública</h3>
+                        <p>Malla Antigua</p>
+                    </div>
+                    <div class="card-footer"><span>8 Semestres</span><span class="arrow">→</span></div>
+                </a>
+                
+
+                <h2 class="grid-section-title">✨ Carreras Actualizadas (2025-2026)</h2>
+
+                <a href="visor.html?carrera=SISTEMAS_NUEVA" class="career-card-v3 new">
+                    <span class="badge-new-plan">NUEVO</span>
+                    <div class="card-tag card-ing">Ingeniería</div>
+                    <div class="card-body">
+                        <div class="icon-box">💻</div>
+                        <h3>Ing. de Sistemas</h3>
+                        <p>Gestión TI y Software.</p>
+                    </div>
+                    <div class="card-footer"><span>Plan 2025</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=REDES_NUEVA" class="career-card-v3 new">
+                    <span class="badge-new-plan">NUEVO</span>
+                    <div class="card-tag card-ing">Ingeniería</div>
+                    <div class="card-body">
+                        <div class="icon-box">📡</div>
+                        <h3>Ing. en Redes</h3>
+                        <p>Ciberseguridad y Telco.</p>
+                    </div>
+                    <div class="card-footer"><span>Plan 2025</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=INDUSTRIAL_NUEVA" class="career-card-v3 new">
+                    <span class="badge-new-plan">NUEVO</span>
+                    <div class="card-tag card-ing">Ingeniería</div>
+                    <div class="card-body">
+                        <div class="icon-box">⚙️</div>
+                        <h3>Ing. Industrial</h3>
+                        <p>Optimización y Procesos.</p>
+                    </div>
+                    <div class="card-footer"><span>Plan 2025</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=COMERCIAL_NUEVA" class="career-card-v3 new">
+                    <span class="badge-new-plan">NUEVO</span>
+                    <div class="card-tag card-emp">Empresariales</div>
+                    <div class="card-body">
+                        <div class="icon-box">📊</div>
+                        <h3>Ing. Comercial</h3>
+                        <p>Negocios y Mercados.</p>
+                    </div>
+                    <div class="card-footer"><span>Plan 2025</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=DERECHO_NUEVA" class="career-card-v3 new" style="border-left-color: #f59e0b;">
+                    <span class="badge-new-plan" style="background:#fef9c3; color:#854d0e; border-color:#5cfd47;">NUEVO</span>
+                    <div class="card-tag card-emp">Ciencias Sociales</div>
+                    <div class="card-body">
+                        <div class="icon-box">⚖️</div>
+                        <h3>DERECHO</h3>
+                        <p>Nueva Malla</p>
+                    </div>
+                    <div class="card-footer"><span>Plan 2025</span><span class="arrow">→</span></div>
+                </a>
+
+                <a href="visor.html?carrera=ADMINISTRACION_NUEVA" class="career-card-v3 new">
+                    <span class="badge-new-plan">NUEVO</span>
+                    <div class="card-tag card-emp">Empresariales</div>
+                    <div class="card-body">
+                        <div class="icon-box">💼</div>
+                        <h3>Adm. de Empresas</h3>
+                        <p>Gestión Estratégica.</p>
+                    </div>
+                    <div class="card-footer"><span>Plan 2025</span><span class="arrow">→</span></div>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="js/search.js"></script>
+    <link rel="stylesheet" href="css/calendario.css">
+
+    <script src="js/calendario.js"></script>
+
+    <div id="event-modal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="modal-category" id="modal-event-category">ACADÉMICO</span>
+            <button class="close-modal" id="btn-cerrar-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <h2 id="modal-event-title">Evento</h2>
+            <div class="modal-date-box">
+                <span class="icon">📅</span>
+                <span id="modal-event-date">-</span>
+            </div>
+            <p id="modal-event-description">-</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-modal-primary" id="btn-entendido-modal">Entendido</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

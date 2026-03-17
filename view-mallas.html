@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mallas Curriculares | UPDS Command Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .grid-section-title {
+            grid-column: 1 / -1;
+            font-size: 1.1rem;
+            color: #1e293b;
+            font-weight: 800;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center; gap: 12px;
+        }
+
+        .whatsapp-sender-bar {
+            background: white; padding: 20px 30px; border-radius: 16px;
+            margin-bottom: 30px; display: flex; align-items: center; gap: 20px;
+            border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .input-phone {
+            padding: 12px 18px; border-radius: 12px; border: 2px solid #cbd5e1;
+            font-family: inherit; font-weight: 600; font-size: 1rem; width: 280px; outline: none;
+        }
+
+        .btn-whatsapp-share {
+            background-color: #25d366; color: white; display: flex; align-items: center;
+            justify-content: center; width: 45px; height: 42px; border-radius: 10px;
+            transition: 0.3s; border: none; cursor: pointer;
+        }
+        .btn-whatsapp-share:hover { background-color: #128c7e; transform: scale(1.05); }
+
+        .malla-actions { display: flex; gap: 8px; margin-top: 15px; }
+        .malla-card.new-highlight { border: 2px solid #86efac; background: linear-gradient(to bottom, #ffffff, #f0fdf4); }
+        .badge-semi { background: #fef9c3; color: #854d0e; font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; font-weight: 800; border: 1px solid #fde047; }
+    </style>
+</head>
+<body class="admin-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="img/upds_logo2.png" alt="UPDS" class="logo-centered">
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html"><span class="nav-icon">⊞</span>PROGRAMACIÓN</a>
+            <a href="view-mallas.html" class="active"><span class="nav-icon">📁</span> MALLAS</a>
+            <a href="view-aulas.html"><span class="nav-icon">🏫</span> ASIGNACIÓN DE AULAS</a>
+            <a href="view-configuracion.html"><span class="nav-icon">⚙️</span> CONFIGURACIÓN</a>
+            <a href="view-reportes.html" class="nav-icon"><span class="nav-icon">📊</span> REPORTES</a>
+            <a href="informaciones.html" class="nav-icon"><span class="nav-icon">ℹ️</span> INFORMACIONES</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-pill">
+                <div class="avatar">Area Academica</div>
+                <span>Sección de Registros</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="content-header">
+            <div class="header-titles">
+                <h1>Explorador de Mallas Curriculares</h1>
+                <p>Planes de estudio oficiales - Sede Cochabamba</p>
+            </div>
+            <div class="header-date"><span>Cochabamba, 2026</span></div>
+        </header>
+
+        <div class="whatsapp-sender-bar">
+            <span style="font-size: 1.8rem;">📱</span>
+            <div style="flex-grow: 1;">
+                <label style="display: block; font-weight: 800; font-size: 0.75rem; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">WhatsApp del Estudiante</label>
+                <input type="number" id="phone-number" class="input-phone" placeholder="70712345">
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="mallas-grid">
+                
+                <h2 class="grid-section-title">✨ Planes Actualizados (Nuevos 2025-2026)</h2>
+
+                <div class="malla-card new-highlight">
+                    <div class="malla-icon">💻</div>
+                    <h3>Ing. de Sistemas</h3>
+                    <p>Plan Nuevo (Presencial)</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Malla Ingeniería de Sistemas.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Malla Ingeniería de Sistemas.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Sistemas (Nuevo)', 'Malla Ingeniería de Sistemas.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card new-highlight">
+                    <div class="malla-icon">📡</div>
+                    <h3>Ing. en Redes</h3>
+                    <p>Plan Nuevo (Presencial)</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Malla Ing en Redes y Telecomunicaciones.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Malla Ing en Redes y Telecomunicaciones.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Redes (Nuevo)', 'Malla Ing en Redes y Telecomunicaciones.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card new-highlight">
+                    <div class="malla-icon">⚙️</div>
+                    <h3>Ing. Industrial</h3>
+                    <p>Plan Nuevo (Presencial)</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Malla Ingeniería Industrial.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Malla Ingeniería Industrial.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Industrial (Nuevo)', 'Malla Ingeniería Industrial.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card new-highlight">
+                    <div class="malla-icon">📊</div>
+                    <h3>Ing. Comercial</h3>
+                    <p>Plan Nuevo (Presencial)</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Malla Ingeniería Comercial.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Malla Ingeniería Comercial.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Comercial (Nuevo)', 'Malla Ingeniería Comercial.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card new-highlight" style="border-color: #fde047;">
+                    <div class="malla-icon">📊</div>
+                    <h3>Comercial <span class="badge-semi">SEMI</span></h3>
+                    <p>Plan Nuevo (Semipresencial)</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Malla Ingeniería Comercial (Semipresencial).pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Malla Ingeniería Comercial (Semipresencial).pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Comercial (Semi)', 'Malla Ingeniería Comercial (Semipresencial).pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card new-highlight">
+                    <div class="malla-icon">💼</div>
+                    <h3>Adm. Empresas</h3>
+                    <p>Plan Nuevo (Presencial)</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Malla Administración de Empresas.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Malla Administración de Empresas.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Adm. Empresas (Nuevo)', 'Malla Administración de Empresas.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card new-highlight">
+                    <div class="malla-icon">💼</div>
+                    <h3>Adm. Empresas</h3>
+                    <p>Plan Nuevo (Semipresencial)</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Malla Administración de Empresas (Semipresencial).pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Malla Administración de Empresas (Semipresencial).pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Adm. Empresas (Nuevo)', 'Malla Administración de Empresas (Semipresencial).pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <h2 class="grid-section-title">📂 Mallas Anteriores (Históricas)</h2>
+
+                <div class="malla-card">
+                    <div class="malla-icon">💻</div>
+                    <h3>Sistemas</h3>
+                    <p>Malla Antigua</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Ingenieria de Sistemas Malla antigua.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Ingenieria de Sistemas Malla antigua.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Sistemas (Antiguo)', 'Ingenieria de Sistemas Malla antigua.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card">
+                    <div class="malla-icon">📡</div>
+                    <h3>Redes</h3>
+                    <p>Malla Antigua</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Ingenieria en Redes y Telecomunicaciones Malla antigua.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Ingenieria en Redes y Telecomunicaciones Malla antigua.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Redes (Antiguo)', 'Ingenieria en Redes y Telecomunicaciones Malla antigua.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card">
+                    <div class="malla-icon">📊</div>
+                    <h3>Comercial</h3>
+                    <p>Malla Antigua</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Ingenieria Comercial Malla antigua.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Ingenieria Comercial Malla antigua.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Comercial (Antiguo)', 'Ingenieria Comercial Malla antigua.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card">
+                    <div class="malla-icon">⚖️</div>
+                    <h3>Derecho</h3>
+                    <p>Malla Antigua</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Derecho Malla antigua.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Derecho Malla antigua.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Derecho', 'Derecho Malla antigua.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card">
+                    <div class="malla-icon">🧠</div>
+                    <h3>Psicología</h3>
+                    <p>Malla Antigua</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Psicologia Malla antigua.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Psicologia Malla antigua.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Psicología', 'Psicologia Malla antigua.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card">
+                    <div class="malla-icon">💼</div>
+                    <h3>Adm. Empresas</h3>
+                    <p>Malla Antigua</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Administración de Empresas Malla Antigua.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Administración de Empresas Malla Antigua.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Adm. Empresas (Antiguo)', 'Administración de Empresas Malla Antigua.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card">
+                    <div class="malla-icon">🧾</div>
+                    <h3>Contaduría</h3>
+                    <p>Malla Antigua</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Contaduria Publica Malla antigua.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Contaduria Publica Malla antigua.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Contaduría', 'Contaduria Publica Malla antigua.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card">
+                    <div class="malla-icon">🏗️</div>
+                    <h3>Petrolera</h3>
+                    <p>Malla Antigua</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Ingenieria en Gestion Petrolera Malla antigua.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Ingenieria en Gestion Petrolera Malla antigua.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Gestión Petrolera', 'Ingenieria en Gestion Petrolera Malla antigua.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card">
+                    <div class="malla-icon">⚙️</div>
+                    <h3>Industrial</h3>
+                    <p>Malla Antigua</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Ingenieria Industrial Malla antigua.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Ingenieria Industrial Malla antigua.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Industrial', 'Ingenieria Industrial Malla antigua.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+                <div class="malla-card">
+                    <div class="malla-icon">🎙️</div>
+                    <h3>Comunicación</h3>
+                    <p>Malla Antigua</p>
+                    <div class="malla-actions">
+                        <a href="mallas_curriculares/Comunicacion Social Malla antigua.pdf" target="_blank" class="btn-malla btn-view">👁️</a>
+                        <a href="mallas_curriculares/Comunicacion Social Malla antigua.pdf" download class="btn-malla btn-download">⬇️</a>
+                        <button onclick="enviarMalla('Comunicación', 'Comunicacion Social Malla antigua.pdf')" class="btn-whatsapp-share">💬</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function enviarMalla(carrera, archivo) {
+            const phone = document.getElementById('phone-number').value;
+            if(!phone || phone.length < 8) { alert("Ingrese número de WhatsApp"); return; }
+            const baseUrl = window.location.origin + window.location.pathname.replace('view-mallas.html', '');
+            const fileUrl = baseUrl + 'mallas_curriculares/' + encodeURIComponent(archivo);
+            const texto = `*UPDS Cochabamba*\nHola, te comparto la malla curricular de: *${carrera}*\n`;
+            window.open(`https://api.whatsapp.com/send?phone=591${phone}&text=${encodeURIComponent(texto)}`, '_blank');
+        }
+    </script>
+</body>
+</html>

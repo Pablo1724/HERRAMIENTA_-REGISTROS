@@ -1,0 +1,243 @@
+/* --- ESTILOS DEL WIDGET INTEGRADO V3 --- */
+:root {
+    --cal-bg: #001a35;
+    --cal-accent: #ffcc00; /* Color UPDS */
+    --cal-text: #ffffff;
+    --cal-border: rgba(255, 255, 255, 0.1);
+    --cal-hover: rgba(255, 204, 0, 0.1);
+}
+
+/* El botón flotante */
+#btn-calendar-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--cal-accent);
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+/* Contenedor Principal (Oculto por defecto) */
+.calendar-widget-v3 {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 750px; /* Tamaño ampliado para diseño profesional */
+    height: 500px;
+    background: var(--cal-bg);
+    border: 1px solid var(--cal-border);
+    border-radius: 16px;
+    overflow: hidden;
+    z-index: 9999;
+    display: none; /* Se activa con la clase .active */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.calendar-widget-v3.active {
+    display: block; /* Aquí es donde ocurre la magia */
+    animation: fadeIn 0.3s ease-out;
+}
+
+.cal-app-container {
+    display: flex;
+    height: 100%;
+}
+
+/* --- PANEL IZQUIERDO: CALENDARIO --- */
+.cal-main-panel {
+    flex: 1.5;
+    padding: 20px;
+    border-right: 1px solid var(--cal-border);
+}
+
+.cal-header-v3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.month-display {
+    text-align: center;
+}
+
+.month-display h3 {
+    color: var(--cal-accent);
+    margin: 0;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.btn-today {
+    font-size: 10px;
+    background: var(--cal-accent);
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.cal-grid-v3 {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day-name-label {
+    text-align: center;
+    font-size: 11px;
+    color: #888;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.day-cell {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+    color: #ccc;
+}
+
+.day-cell:hover { background: var(--cal-hover); }
+.day-cell.is-today { border: 1px solid var(--cal-accent); color: var(--cal-accent); }
+.day-cell.is-selected { background: var(--cal-accent); color: #000; }
+.day-cell.is-selected .day-number { font-weight: 800; }
+
+.day-number { font-size: 14px; z-index: 2; }
+
+/* Indicadores de eventos (puntos) */
+.dots-box { display: flex; gap: 2px; margin-top: 2px; }
+.dot-acad { width: 4px; height: 4px; background: var(--cal-accent); border-radius: 50%; }
+.dot-pers { width: 4px; height: 4px; background: #10b981; border-radius: 50%; }
+
+/* --- PANEL DERECHO: DETALLES --- */
+.cal-side-panel {
+    flex: 1;
+    background: rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.side-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--cal-border);
+}
+
+.selected-date-text { font-size: 13px; font-weight: bold; color: var(--cal-accent); text-transform: capitalize; }
+
+.side-events-list {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.event-item-v3 {
+    background: rgba(255,255,255,0.03);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.event-item-v3.is-done { opacity: 0.4; }
+.event-item-v3.institutional { border-left: 3px solid var(--cal-accent); }
+.event-item-v3.manual { border-left: 3px solid #10b981; }
+
+.ev-check { cursor: pointer; font-size: 16px; color: var(--cal-accent); }
+.ev-content { flex: 1; display: flex; flex-direction: column; }
+.ev-title-text { font-size: 12px; color: #fff; line-height: 1.2; }
+.ev-type-tag { font-size: 9px; color: #888; margin-top: 4px; font-weight: bold; }
+
+.ev-delete-btn { background: none; border: none; color: #f43f5e; cursor: pointer; font-size: 14px; }
+
+/* Editor y Botones */
+.mini-editor { padding: 15px; border-top: 1px solid var(--cal-border); }
+.mini-editor input { width: 100%; background: #002a54; border: 1px solid #444; color: white; padding: 8px; border-radius: 5px; margin-bottom: 10px; }
+.save-btn { background: var(--cal-accent); color: #000; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-weight: 800; width: 100%; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Estilos del Modal */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 26, 53, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #ffffff;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+
+.modal-category {
+    background: #ffcc00;
+    color: #001a35;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.close-modal {
+    background: none; border: none; font-size: 24px; cursor: pointer; color: #94a3b8;
+}
+
+.modal-body h2 { color: #001a35; margin: 0 0 8px 0; font-size: 20px; }
+
+.modal-date-box {
+    display: flex; align-items: center; gap: 6px;
+    color: #0284c7; font-weight: 600; font-size: 14px; margin-bottom: 12px;
+}
+
+#modal-event-description {
+    color: #475569; line-height: 1.5; font-size: 14px; margin: 0;
+}
+
+.btn-modal-primary {
+    width: 100%; background: #001a35; color: white; border: none;
+    padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer;
+    margin-top: 20px; transition: background 0.2s;
+}
+
+.btn-modal-primary:hover { background: #072a4d; }

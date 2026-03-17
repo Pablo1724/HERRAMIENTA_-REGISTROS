@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDS | Informaciones Independientes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #004a99;
+            --success: #10b981;
+            --whatsapp: #25d366;
+            --slate-50: #f8fafc;
+            --slate-200: #e2e8f0;
+            --slate-800: #1e293b;
+        }
+
+        .career-grid-professional {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .info-card-atomic {
+            background: white;
+            border-radius: 20px;
+            border: 1px solid var(--slate-200);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .area-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid var(--slate-50);
+            padding-bottom: 12px;
+        }
+
+        .destination-box {
+            background: var(--slate-50);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid var(--slate-200);
+        }
+
+        .destination-box label {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--slate-600);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .input-dest {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid var(--slate-200);
+            border-radius: 8px;
+            font-family: inherit;
+            font-weight: 700;
+            box-sizing: border-box;
+        }
+
+        .action-module {
+            border: 1px solid var(--slate-100);
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #fff;
+        }
+
+        .module-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .label-group span {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+
+        .label-group strong {
+            font-size: 0.9rem;
+            color: var(--slate-800);
+        }
+
+        .btn-action-wa {
+            background: var(--whatsapp);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            font-weight: 800;
+            font-size: 0.7rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-action-wa:hover { opacity: 0.9; }
+
+        .qr-preview {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .qr-preview img {
+            width: 80px;
+            height: 80px;
+            border: 1px solid var(--slate-200);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="admin-layout">
+        
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="img/upds_logo2.png" alt="UPDS" class="logo-centered">
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html"><span class="nav-icon">⊞</span>PROGRAMACIÓN</a>
+            <a href="view-mallas.html"><span class="nav-icon">📁</span> MALLAS</a>
+            <a href="view-aulas.html"><span class="nav-icon">🏫</span> ASIGNACIÓN DE AULAS</a>
+            <a href="view-configuracion.html"><span class="nav-icon">⚙️</span> CONFIGURACIÓN</a>
+            <a href="view-reportes.html"><span class="nav-icon">📊</span> REPORTES</a>
+            <a href="informaciones.html" class="active"><span class="nav-icon">ℹ️</span> INFORMACIONES</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="content-header">
+            <div class="header-titles">
+                <h1>Centro de Informaciones</h1>
+                <p>Envío de datos individuales por área</p>
+            </div>
+        </header>
+
+        <div class="grid-container">
+            <div class="career-grid-professional" id="grid-cards">
+                <div class="info-card-atomic">
+                    <div class="area-title">📁 REGISTROS</div>
+                    <div class="destination-box">
+                        <label>Enviar a (Celular):</label>
+                        <input type="text" id="dest-reg" class="input-dest" placeholder="Ej: 71234567">
+                    </div>
+                    <div class="action-module">
+                        <div class="module-info">
+                            <div class="label-group"><span>Número de Contacto</span><strong id="tel-reg">61786056</strong></div>
+                            <button class="btn-action-wa" onclick="enviarDato('reg', 'tel')"><i class="fab fa-whatsapp"></i> ENVIAR TEL</button>
+                        </div>
+                    </div>
+                    <div class="action-module">
+                        <div class="module-info">
+                            <div class="label-group"><span>Email Corporativo</span><strong id="mail-reg">registroscochabamba@upds.edu.bo</strong></div>
+                            <button class="btn-action-wa" onclick="enviarDato('reg', 'mail')"><i class="fab fa-whatsapp"></i> ENVIAR EMAIL</button>
+                        </div>
+                    </div>
+                    <div class="action-module">
+                        <div class="qr-preview" id="qr-reg"></div>
+                        <button class="btn-action-wa" style="justify-content: center;" onclick="enviarDato('reg', 'qr')">
+                            <i class="fab fa-whatsapp"></i> ENVIAR LINK DE CARTA
+                        </button>
+                    </div>
+                </div>
+
+                <div class="info-card-atomic">
+                    <div class="area-title">🎓 MODALIDAD DE GRADO</div>
+                    <div class="destination-box">
+                        <label>Enviar a (Celular):</label>
+                        <input type="text" id="dest-mdg" class="input-dest" placeholder="Ej: 71234567">
+                    </div>
+                    <div class="action-module">
+                        <div class="module-info">
+                            <div class="label-group"><span>Cel. Corporativo</span><strong id="tel-mdg">69427770</strong></div>
+                            <button class="btn-action-wa" onclick="enviarDato('mdg', 'tel')"><i class="fab fa-whatsapp"></i> ENVIAR TEL</button>
+                        </div>
+                    </div>
+                    <div class="action-module">
+                        <div class="module-info">
+                            <div class="label-group"><span>Email MDG</span><strong id="mail-mdg">cb.atencion.mdg@UPDS.edu.bo</strong></div>
+                            <button class="btn-action-wa" onclick="enviarDato('mdg', 'mail')"><i class="fab fa-whatsapp"></i> ENVIAR EMAIL</button>
+                        </div>
+                    </div>
+                    <div class="action-module">
+                        <div class="qr-preview" id="qr-mdg"></div>
+                        <button class="btn-action-wa" style="justify-content: center;" onclick="enviarDato('mdg', 'qr')">
+                            <i class="fab fa-whatsapp"></i> ENVIAR REGLAMENTO / CARTA
+                        </button>
+                    </div>
+                </div>
+
+                <div class="info-card-atomic">
+                    <div class="area-title">💼 PRÁCTICAS</div>
+                    <div class="destination-box">
+                        <label>Enviar a (Celular):</label>
+                        <input type="text" id="dest-prac" class="input-dest" placeholder="Ej: 71234567">
+                    </div>
+                    <div class="action-module">
+                        <div class="module-info">
+                            <div class="label-group"><span>Cel. Corporativo</span><strong id="tel-prac">61785947</strong></div>
+                            <button class="btn-action-wa" onclick="enviarDato('prac', 'tel')"><i class="fab fa-whatsapp"></i> ENVIAR TEL</button>
+                        </div>
+                    </div>
+                    <div class="action-module">
+                        <div class="module-info">
+                            <div class="label-group"><span>Email Prácticas</span><strong id="mail-prac">practicas.profesionales.cb@UPDS.edu.bo</strong></div>
+                            <button class="btn-action-wa" onclick="enviarDato('prac', 'mail')"><i class="fab fa-whatsapp"></i> ENVIAR EMAIL</button>
+                        </div>
+                    </div>
+                    <div class="action-module">
+                        <div class="qr-preview" id="qr-prac"></div>
+                        <button class="btn-action-wa" style="justify-content: center;" onclick="enviarDato('prac', 'qr')">
+                            <i class="fab fa-whatsapp"></i> ENVIAR CONVENIOS / CARTAS
+                        </button>
+                    </div>
+                </div>
+
+                <div class="info-card-atomic">
+                    <div class="area-title">🏛️ VICERRECTORADO</div>
+                    <div class="destination-box">
+                        <label>Enviar a (Celular):</label>
+                        <input type="text" id="dest-vice" class="input-dest" placeholder="Ej: 71234567">
+                    </div>
+                    <div class="action-module">
+                        <div class="module-info">
+                            <div class="label-group"><span>Cel. Secretaría</span><strong id="tel-vice">70000007</strong></div>
+                            <button class="btn-action-wa" onclick="enviarDato('vice', 'tel')"><i class="fab fa-whatsapp"></i> ENVIAR TEL</button>
+                        </div>
+                    </div>
+                    <div class="action-module">
+                        <div class="module-info">
+                            <div class="label-group"><span>Email Vicerrectorado</span><strong id="mail-vice">vicerrectorado.cba@upds.edu.bo</strong></div>
+                            <button class="btn-action-wa" onclick="enviarDato('vice', 'mail')"><i class="fab fa-whatsapp"></i> ENVIAR EMAIL</button>
+                        </div>
+                    </div>
+                    <div class="action-module">
+                        <div class="qr-preview" id="qr-vice"></div>
+                        <button class="btn-action-wa" style="justify-content: center;" onclick="enviarDato('vice', 'qr')">
+                            <i class="fab fa-whatsapp"></i> ENVIAR CALENDARIO
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // CONFIGURACIÓN DE ENLACES INDEPENDIENTES
+        const CONFIG_AREAS = {
+            'reg': {
+                nombre: 'REGISTROS',
+                link: 'https://upds-my.sharepoint.com/:w:/g/personal/juan_torrico_upds_edu_bo/IQCSTDHYRjKaTKXbsBKqrVDQAdHRojpjdFxmMmmAO3kHbnU?e=WbfZzJ'
+            },
+            'mdg': {
+                nombre: 'MODALIDAD DE GRADO',
+                link: 'PON_AQUI_EL_LINK_DE_MDG'
+            },
+            'prac': {
+                nombre: 'PRÁCTICAS PROFESIONALES',
+                link: 'PON_AQUI_EL_LINK_DE_PRACTICAS'
+            },
+            'vice': {
+                nombre: 'VICERRECTORADO ACADÉMICO',
+                link: 'PON_AQUI_EL_LINK_DE_VICERRECTORADO'
+            }
+        };
+
+        // Generar QRs automáticamente al cargar la página
+        window.onload = function() {
+            for (let area in CONFIG_AREAS) {
+                const container = document.getElementById(`qr-${area}`);
+                if(container) {
+                    const url = CONFIG_AREAS[area].link;
+                    container.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${encodeURIComponent(url)}" alt="QR ${area}">`;
+                }
+            }
+        };
+
+        function enviarDato(idArea, tipo) {
+            const destino = document.getElementById(`dest-${idArea}`).value;
+            
+            if (!destino || destino.length < 8) {
+                alert("Introduce un número de destino válido (8 dígitos).");
+                return;
+            }
+
+            let mensaje = "";
+            const areaInfo = CONFIG_AREAS[idArea];
+
+            if (tipo === 'tel') {
+                const tel = document.getElementById(`tel-${idArea}`).innerText;
+                mensaje = `📞 *CONTACTO UPDS (${areaInfo.nombre})*\n\nNúmero: ${tel}`;
+            } 
+            else if (tipo === 'mail') {
+                const mail = document.getElementById(`mail-${idArea}`).innerText;
+                mensaje = `📧 *CORREO UPDS (${areaInfo.nombre})*\n\nEmail: ${mail}`;
+            } 
+            else if (tipo === 'qr') {
+                mensaje = `📄 *DOCUMENTACIÓN UPDS (${areaInfo.nombre})*\n\nPuedes descargarla aquí:\n${areaInfo.link}`;
+            }
+
+            let phone = destino.replace(/\s+/g, '');
+            if (phone.length === 8) phone = "591" + phone;
+
+            window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(mensaje)}`, '_blank');
+        }
+    </script>
+</body>
+</html>

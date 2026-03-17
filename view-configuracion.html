@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración | UPDS Command Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --primary: #004a99;
+            --success: #10b981;
+            --danger: #f43f5e;
+            --warning: #f59e0b;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-400: #94a3b8;
+            --slate-800: #1e293b;
+        }
+
+        body { background-color: var(--slate-50); color: var(--slate-800); font-family: 'Plus Jakarta Sans', sans-serif; margin: 0; display: flex; }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .main-content { margin-left: 50px; width: calc(100% - 280px); padding: 10px; box-sizing: border-box; min-height: 100vh; }
+
+        /* Cards de Configuración */
+        .config-grid-pro { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); 
+            gap: 25px; 
+            margin-top: 30px; 
+        }
+
+        .config-card-v3 {
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            border: 1px solid var(--slate-200);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .config-card-v3:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); }
+
+        .config-card-v3.warning-zone { border-color: #fee2e2; background: linear-gradient(to bottom, #ffffff, #fff1f2); }
+
+        /* Header de Card */
+        .card-icon-title { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+        .card-icon-title .icon-circle { 
+            width: 45px; height: 45px; background: var(--slate-100); 
+            border-radius: 12px; display: flex; align-items: center; 
+            justify-content: center; font-size: 1.2rem; 
+        }
+        .card-icon-title h3 { margin: 0; font-size: 1.1rem; font-weight: 800; color: var(--slate-800); }
+
+        /* Inputs y Labels */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { 
+            display: block; font-size: 0.75rem; font-weight: 800; 
+            color: var(--slate-400); text-transform: uppercase; 
+            margin-bottom: 8px; letter-spacing: 0.5px; 
+        }
+
+        .config-input-v3 {
+            width: 100%; padding: 12px 15px; border-radius: 12px; 
+            border: 1.5px solid var(--slate-200); background: var(--slate-50); 
+            font-family: inherit; font-weight: 600; color: var(--slate-800); 
+            box-sizing: border-box; transition: 0.2s;
+        }
+        .config-input-v3:focus { outline: none; border-color: var(--primary); background: white; }
+        .config-input-v3[readonly] { cursor: not-allowed; opacity: 0.7; }
+
+        /* Botones Profesionales */
+        .btn-config {
+            width: 100%; padding: 14px; border-radius: 12px; border: none; 
+            font-weight: 800; font-size: 0.8rem; cursor: pointer; 
+            transition: 0.3s; text-transform: uppercase; letter-spacing: 1px;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+
+        .btn-save { background: var(--primary); color: white; margin-top: 10px; }
+        .btn-save:hover { background: #003a7a; box-shadow: 0 4px 12px rgba(0,74,153,0.3); }
+
+        .btn-reload { background: white; border: 1.5px solid var(--slate-200); color: var(--slate-800); }
+        .btn-reload:hover { background: var(--slate-100); }
+
+        .btn-reset { background: var(--danger); color: white; }
+        .btn-reset:hover { background: #e11d48; box-shadow: 0 4px 12px rgba(225,29,72,0.3); }
+
+        /* Status Pills */
+        .status-box { 
+            background: #ecfdf5; border: 1px solid #d1fae5; 
+            padding: 15px; border-radius: 15px; margin-bottom: 20px; 
+        }
+        .status-box p { margin: 5px 0; font-size: 0.85rem; font-weight: 600; color: #065f46; }
+
+        .hint-text { font-size: 0.75rem; color: var(--slate-400); margin-top: 15px; font-weight: 500; }
+    </style>
+</head>
+<body class="admin-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <img src="img/upds_logo2.png" alt="UPDS" class="logo-centered">
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html"><span class="nav-icon">⊞</span>PROGRAMACIÓN</a>
+            <a href="view-mallas.html"><span class="nav-icon">📁</span> MALLAS</a>
+            <a href="view-aulas.html"><span class="nav-icon">🏫</span> ASIGNACIÓN DE AULAS</a>
+            <a href="view-configuracion.html" class="active"><span class="nav-icon">⚙️</span> CONFIGURACIÓN</a>
+            <a href="view-reportes.html" class="nav-icon"><span class="nav-icon">📊</span> REPORTES</a>
+            <a href="informaciones.html" class="nav-icon"><span class="nav-icon">ℹ️</span> INFORMACIONES</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-pill">
+                <div class="avatar">Area Academica</div>
+                <span>Sección de Registros</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="content-header">
+            <div class="header-titles">
+                <h1>Configuración del Sistema</h1>
+                <p>Ajustes de parámetros globales y mantenimiento de datos</p>
+            </div>
+            <div class="header-date">
+                <span>Sede Cochabamba</span>
+            </div>
+        </header>
+
+        <div class="config-grid-pro">
+            
+            <div class="config-card-v3">
+                <div class="card-icon-title">
+                    <div class="icon-circle">📅</div>
+                    <h3>Ciclo Académico</h3>
+                </div>
+                <div class="form-group">
+                    <label>Año de Gestión Actual</label>
+                    <select id="cfg-gestion" class="config-input-v3">
+                        <option value="2025">2025</option>
+                        <option value="2026" selected>2026</option>
+                        <option value="2027">2027</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Sede Administrativa</label>
+                    <input type="text" class="config-input-v3" value="Cochabamba" readonly>
+                </div>
+                <button class="btn-config btn-save" onclick="guardarAjustes()">💾 Guardar Cambios</button>
+            </div>
+
+            <div class="config-card-v3">
+                <div class="card-icon-title">
+                    <div class="icon-circle">⚖️</div>
+                    <h3>Reglas de Negocio</h3>
+                </div>
+                <div class="form-group">
+                    <label>Límite Materias Regulares</label>
+                    <input type="number" id="cfg-limite-reg" class="config-input-v3" value="6">
+                </div>
+                <div class="form-group">
+                    <label>Límite Temporada Inv/Ver</label>
+                    <input type="number" id="cfg-limite-temp" class="config-input-v3" value="1">
+                </div>
+                <p class="hint-text">ℹ️ Estos parámetros regulan las alertas de sobrecarga en los simuladores de programación.</p>
+            </div>
+
+            <div class="config-card-v3 warning-zone">
+                <div class="card-icon-title">
+                    <div class="icon-circle">🛠️</div>
+                    <h3>Zona de Mantenimiento</h3>
+                </div>
+                <div class="status-box">
+                    <p><strong>Caché del Sistema:</strong> Activo</p>
+                    <p id="last-sync" style="font-size: 0.75rem; opacity: 0.8;">Sincronizando...</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <button class="btn-config btn-reload" onclick="recargarOferta()">🔄 Forzar Recarga de Excel</button>
+                    <button class="btn-config btn-reset" onclick="resetTotal()">⚠️ Reiniciar Todo el Sistema</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        window.onload = () => {
+            const settings = JSON.parse(localStorage.getItem('upds_settings')) || {};
+            if(settings.gestion) document.getElementById('cfg-gestion').value = settings.gestion;
+            if(settings.limiteReg) document.getElementById('cfg-limite-reg').value = settings.limiteReg;
+            if(settings.limiteTemp) document.getElementById('cfg-limite-temp').value = settings.limiteTemp;
+            
+            document.getElementById('last-sync').innerText = "Última lectura: " + new Date().toLocaleString();
+        };
+
+        function guardarAjustes() {
+            const settings = {
+                gestion: document.getElementById('cfg-gestion').value,
+                limiteReg: document.getElementById('cfg-limite-reg').value,
+                limiteTemp: document.getElementById('cfg-limite-temp').value,
+                lastUpdate: new Date().toISOString()
+            };
+            localStorage.setItem('upds_settings', JSON.stringify(settings));
+            alert("✅ Ajustes guardados correctamente.");
+        }
+
+        function recargarOferta() {
+            if(confirm("Se forzará la descarga de los archivos .xlsx más recientes. ¿Continuar?")) {
+                window.location.href = "index.html?refresh=" + Math.random();
+            }
+        }
+
+        function resetTotal() {
+            if(confirm("❗ ADVERTENCIA CRÍTICA: Se borrarán todas las aulas asignadas, proyecciones y configuraciones. Esta acción es irreversible. ¿Proceder?")) {
+                localStorage.clear();
+                alert("Sistema reiniciado con éxito.");
+                window.location.href = "index.html";
+            }
+        }
+    </script>
+</body>
+</html>
