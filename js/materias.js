@@ -86,7 +86,7 @@ const todasLasMaterias = [
     { id: 'SIS302', sem: 3, nom: 'Cálculo I', pre: ['SIS102'], carrera: 'SISTEMAS' },
     { id: 'SIS303', sem: 3, nom: 'Investigación Operativa', pre: ['SIS203'], carrera: 'SISTEMAS' },
     { id: 'SIS304', sem: 3, nom: 'Programación II', pre: ['SIS204'], carrera: 'SISTEMAS' },
-    { id: 'SIS305', sem: 3, nom: 'Taller de Sistemas Operativos', pre: ['SIS205'], carrera: 'SISTEMAS' },
+    { id: 'SIS305', sem: 3, nom: 'Taller de Sistemas Operativos I', pre: ['SIS205'], carrera: 'SISTEMAS' },
     { id: 'SIS306', sem: 3, nom: 'Inglés II', pre: ['SIS106'], carrera: 'SISTEMAS' },
 
     { id: 'MAT-0200', sem: 4, nom: 'Estadística Descriptiva', pre: ['MAT-0100'], carrera: 'SISTEMAS' },
