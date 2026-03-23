@@ -264,7 +264,7 @@ const todasLasMaterias = [
     { id: 'DER-0401', sem: 2, nom: 'Derecho Penal I', pre: ['DER-0400'], carrera: 'DERECHO' },
     { id: 'DER-0220', sem: 2, nom: 'Derechos Humanos', pre: ['SOC-0120'], carrera: 'DERECHO' },
     { id: 'DER-0210', sem: 2, nom: 'Derecho Constitucional I', pre: ['DER-0130'], carrera: 'DERECHO' },
-    { id: 'LIN-0110', sem: 2, nom: 'Deontología y Prosocialidad', pre: ['SOC-0120'], carrera: 'DERECHO' },
+    { id: 'LIN-0110', sem: 2, nom: 'Deontología y Prosocialidad', pre: [], carrera: 'DERECHO' },
     { id: 'ECO-0220', sem: 2, nom: 'Economía Política', pre: [], carrera: 'DERECHO' },
 
     { id: 'DER-0301', sem: 3, nom: 'Derecho Civil II', pre: ['DER-0300'], carrera: 'DERECHO' },
