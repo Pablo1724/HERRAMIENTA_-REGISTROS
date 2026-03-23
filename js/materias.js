@@ -578,7 +578,7 @@ const todasLasMaterias = [
     { id: 'MAT-0210', sem: 3, nom: 'Estadística Inferencial', pre: ['MAT-0200'], carrera: 'INDUSTRIAL' },
     { id: 'FIS-0400', sem: 3, nom: 'Electrotecnia Industrial', pre: ['FIS-0200'], carrera: 'INDUSTRIAL' },
     { id: 'CPA-0200', sem: 3, nom: 'Contabilidad de Costos I', pre: ['CPA-0100'], carrera: 'INDUSTRIAL' },
-    { id: 'ADM-0100', sem: 3, nom: 'Administración I', pre: [''], carrera: 'INDUSTRIAL' },
+    { id: 'ADM-0100', sem: 3, nom: 'Administración I', pre: [], carrera: 'INDUSTRIAL' },
     
     { id: 'SIS-0328', sem: 4, nom: 'Programación numérica y Aplicaciones', pre: ['MAT-0121'], carrera: 'INDUSTRIAL' },
     { id: 'IND-0300', sem: 4, nom: 'Gestión de la Calidad I', pre: ['MAT-0200'], carrera: 'INDUSTRIAL' },
