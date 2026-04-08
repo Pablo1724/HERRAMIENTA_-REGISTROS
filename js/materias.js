@@ -162,7 +162,7 @@ const todasLasMaterias = [
     { id: 'ECO-0200', sem: 4, nom: 'Macroeconomía', pre: ['ECO-0120'], carrera: 'COMERCIAL' },
     { id: 'ADM-0300', sem: 4, nom: 'Finanzas Empresariales I', pre: ['CPA-0200'], carrera: 'COMERCIAL' },
 
-    { id: 'MAT-0300', sem: 5, nom: 'Investigación Operativa', pre: ['MAT-0210'], carrera: 'COMERCIAL' },
+    { id: 'MAT-0300', sem: 5, nom: 'Investigación Operativa I', pre: ['MAT-0210'], carrera: 'COMERCIAL' },
     { id: 'ADM-0220', sem: 5, nom: 'Producto', pre: ['ADM-0210'], carrera: 'COMERCIAL' },
     { id: 'ADM-0230', sem: 5, nom: 'Precio', pre: ['ADM-0210'], carrera: 'COMERCIAL' },
     { id: 'ADM-0260', sem: 5, nom: 'Plaza', pre: ['ADM-0210'], carrera: 'COMERCIAL' },
