@@ -629,21 +629,22 @@ const todasLasMaterias = [
     // ==========================================
 
     // CARRERA: ADMINISTRACIÓN DE EMPRESAS (2025) - 8 Semestres
-    { id: 'LIN-1100', sem: 1, nom: 'Metodología de la Investigación', pre: [], carrera: 'ADMINISTRACION_NUEVA' },
-    { id: 'LIN-1110', sem: 1, nom: 'Ética y Ciudadanía Global', pre: [], carrera: 'ADMINISTRACION_NUEVA' },
+    { id: 'INV-1100', sem: 1, nom: 'Metodología de la Investigación Cientifica', pre: [], carrera: 'ADMINISTRACION_NUEVA' },
+    { id: 'MAT-1380', sem: 1, nom: 'Matemática Aplicada', pre: [], carrera: 'ADMINISTRACION_NUEVA' },
     { id: 'ADM-1100', sem: 1, nom: 'Administración I', pre: [], carrera: 'ADMINISTRACION_NUEVA' },
     { id: 'CPA-1100', sem: 1, nom: 'Contabilidad Empresarial I', pre: [], carrera: 'ADMINISTRACION_NUEVA' },
     { id: 'ECO-1100', sem: 1, nom: 'Introducción a la Economía', pre: [], carrera: 'ADMINISTRACION_NUEVA' },
-    { id: 'ADM-1250', sem: 1, nom: 'Liderazgo y Comunicación Efectiva', pre: [], carrera: 'ADMINISTRACION_NUEVA' },
+    { id: 'LIN-1250', sem: 1, nom: 'Liderazgo y Comunicación Efectiva', pre: [], carrera: 'ADMINISTRACION_NUEVA' },
 
+    { id: 'LIN-1110', sem: 2, nom: 'Ética y Ciudadanía Global', pre: [], carrera: 'ADMINISTRACION_NUEVA' },
     { id: 'ADM-1110', sem: 2, nom: 'Administración II', pre: ['ADM-1100'], carrera: 'ADMINISTRACION_NUEVA' },
-    { id: 'MAT-1210', sem: 2, nom: 'Estadística Descriptiva', pre: ['LIN-1100'], carrera: 'ADMINISTRACION_NUEVA' },
-    { id: 'MAT-1105', sem: 2, nom: 'Matemática Aplicada', pre: ['LIN-1100'], carrera: 'ADMINISTRACION_NUEVA' },
+    { id: 'MAT-1210', sem: 2, nom: 'Estadística Descriptiva', pre: ['MAT-1380'], carrera: 'ADMINISTRACION_NUEVA' },
+    { id: 'MAT-1110', sem: 2, nom: 'Cálculo I', pre: ['MAT-1380'], carrera: 'ADMINISTRACION_NUEVA' },
     { id: 'ECO-1110', sem: 2, nom: 'Microeconomía I', pre: ['ECO-1100'], carrera: 'ADMINISTRACION_NUEVA' },
-    { id: 'CPA-1110', sem: 2, nom: 'Contabilidad Empresarial II', pre: ['CPA-1100'], carrera: 'ADMINISTRACION_NUEVA' },
+    { id: 'CPA-1120', sem: 2, nom: 'Contabilidad Empresarial II', pre: ['CPA-1110'], carrera: 'ADMINISTRACION_NUEVA' },
 
-    { id: 'INV-1210', sem: 3, nom: 'Investigación de Mercados I', pre: ['LIN-1100'], carrera: 'ADMINISTRACION_NUEVA' },
-    { id: 'INV-1230', sem: 3, nom: 'Análisis de Datos Estratégicos', pre: ['MAT-1210'], carrera: 'ADMINISTRACION_NUEVA' },
+    { id: 'INV-1210', sem: 3, nom: 'Investigación de Mercados I', pre: ['INV-1100'], carrera: 'ADMINISTRACION_NUEVA' },
+    { id: 'ADM-1120', sem: 3, nom: 'Análisis de Datos para Decisiones Estratégicas', pre: ['ADM-1110'], carrera: 'ADMINISTRACION_NUEVA' },
     { id: 'MAT-1220', sem: 3, nom: 'Estadística Inferencial', pre: ['MAT-1210'], carrera: 'ADMINISTRACION_NUEVA' },
     { id: 'MAT-1110', sem: 3, nom: 'Cálculo I', pre: ['MAT-1105'], carrera: 'ADMINISTRACION_NUEVA' },
     { id: 'ECO-1200', sem: 3, nom: 'Macroeconomía', pre: ['ECO-1100'], carrera: 'ADMINISTRACION_NUEVA' },
