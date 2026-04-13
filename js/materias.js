@@ -82,19 +82,19 @@ const todasLasMaterias = [
     { id: 'SIS-0200', sem: 2, nom: 'Sistemas Operativos I', pre: ['SIS-0120'], carrera: 'SISTEMAS' },
     { id: 'LIN-0110', sem: 2, nom: 'Deontología y Prosocialidad', pre: [], carrera: 'SISTEMAS' },
 
-    { id: 'SIS301', sem: 3, nom: 'Sistemas Digitales II', pre: ['SIS201'], carrera: 'SISTEMAS' },
-    { id: 'SIS302', sem: 3, nom: 'Cálculo I', pre: ['SIS102'], carrera: 'SISTEMAS' },
-    { id: 'SIS303', sem: 3, nom: 'Investigación Operativa', pre: ['SIS203'], carrera: 'SISTEMAS' },
-    { id: 'SIS304', sem: 3, nom: 'Programación II', pre: ['SIS204'], carrera: 'SISTEMAS' },
-    { id: 'SIS305', sem: 3, nom: 'Taller de Sistemas Operativos I', pre: ['SIS205'], carrera: 'SISTEMAS' },
-    { id: 'SIS306', sem: 3, nom: 'Inglés II', pre: ['SIS106'], carrera: 'SISTEMAS' },
+    { id: 'ELC-0120', sem: 3, nom: 'Sistemas Digitales II', pre: ['ELC-010'], carrera: 'SISTEMAS' },
+    { id: 'MAT-0120', sem: 3, nom: 'Cálculo I', pre: ['MAT-0100'], carrera: 'SISTEMAS' },
+    { id: 'MAT-300', sem: 3, nom: 'Investigación Operativa I', pre: ['MAT-0110'], carrera: 'SISTEMAS' },
+    { id: 'SIS-0122', sem: 3, nom: 'Programación II', pre: ['SIS204'], carrera: 'SISTEMAS' },
+    { id: 'SIS-0210', sem: 3, nom: 'Taller de Sistemas Operativos I', pre: ['SIS-0200'], carrera: 'SISTEMAS' },
+    { id: 'LIN-0201', sem: 3, nom: 'Inglés II', pre: ['LIN-0200'], carrera: 'SISTEMAS' },
 
     { id: 'MAT-0200', sem: 4, nom: 'Estadística Descriptiva', pre: ['MAT-0100'], carrera: 'SISTEMAS' },
     { id: 'SIS-0140', sem: 4, nom: 'Diseño Web I', pre: ['SIS-0121'], carrera: 'SISTEMAS' },
     { id: 'RED-0100', sem: 4, nom: 'Redes I', pre: ['ELC-0110'], carrera: 'SISTEMAS' },
     { id: 'SIS-0123', sem: 4, nom: 'Programación III', pre: ['SIS-0122'], carrera: 'SISTEMAS' },
     { id: 'SIS-0125', sem: 4, nom: 'Base de Datos I', pre: ['SIS-0122'], carrera: 'SISTEMAS' },
-    { id: 'CPA-0100', sem: 4, nom: 'Contabilidad Empresarial', pre: [], carrera: 'SISTEMAS' },
+    { id: 'CPA-0100', sem: 4, nom: 'Contabilidad Empresarial I', pre: [], carrera: 'SISTEMAS' },
 
     { id: 'MAT-0210', sem: 5, nom: 'Estadística Inferencial', pre: ['MAT-0200'], carrera: 'SISTEMAS' },
     { id: 'SIS-0130', sem: 5, nom: 'Estructuras de Datos', pre: ['SIS-0123'], carrera: 'SISTEMAS' },
@@ -103,14 +103,14 @@ const todasLasMaterias = [
     { id: 'SIS-0300', sem: 5, nom: 'Programación Web I', pre: ['SIS-0125'], carrera: 'SISTEMAS' },
     { id: 'SIS-0211', sem: 5, nom: 'Sistemas Operativos II', pre: ['SIS-0200'], carrera: 'SISTEMAS' },
 
-    { id: 'SIS-0310', sem: 6, nom: 'Administración de Base de Datos', pre: ['SIS-0126'], carrera: 'SISTEMAS' },
+    { id: 'SIS-0310', sem: 6, nom: 'Administración de Base de Datos I', pre: ['SIS-0126'], carrera: 'SISTEMAS' },
     { id: 'SIS-0320', sem: 6, nom: 'Sistemas de Información I', pre: ['SIS-0145'], carrera: 'SISTEMAS' },
     { id: 'SIS-0141', sem: 6, nom: 'Diseño Web II', pre: ['SIS-0140'], carrera: 'SISTEMAS' },
     { id: 'SIS-0150', sem: 6, nom: 'Tecnología Web I', pre: ['SIS-0125'], carrera: 'SISTEMAS' },
     { id: 'SIS-0301', sem: 6, nom: 'Programación Web II', pre: ['SIS-0300'], carrera: 'SISTEMAS' },
     { id: 'RED-0130', sem: 6, nom: 'Redes II', pre: ['RED-0100'], carrera: 'SISTEMAS' },
 
-    { id: 'SIS-0250', sem: 7, nom: 'Inteligencia Artificial', pre: ['SIS-0130'], carrera: 'SISTEMAS' },
+    { id: 'SIS-0250', sem: 7, nom: 'Inteligencia Artificial I', pre: ['SIS-0130'], carrera: 'SISTEMAS' },
     { id: 'SIS-0321', sem: 7, nom: 'Sistemas de Información II', pre: ['SIS-0320'], carrera: 'SISTEMAS' },
     { id: 'ELE-0100', sem: 7, nom: 'Electiva 1', pre: [], carrera: 'SISTEMAS', tipo: 'electiva' },
     { id: 'SIS-0330', sem: 7, nom: 'Desarrollo de Sistemas II', pre: ['SIS-0145'], carrera: 'SISTEMAS' },
@@ -156,7 +156,7 @@ const todasLasMaterias = [
     { id: 'CPA-0200', sem: 3, nom: 'Contabilidad de Costos I', pre: ['CPA-0110'], carrera: 'COMERCIAL' },
 
     { id: 'MAT-0130', sem: 4, nom: 'Matemática Financiera', pre: ['MAT-0120'], carrera: 'COMERCIAL' },
-    { id: 'CPA-0300', sem: 4, nom: 'Tributación Aplicada', pre: [], carrera: 'COMERCIAL' },
+    { id: 'CPA-0300', sem: 4, nom: 'Tributación Aplicada I', pre: [], carrera: 'COMERCIAL' },
     { id: 'ADM-0210', sem: 4, nom: 'Principios de Marketing', pre: ['ADM-0201'], carrera: 'COMERCIAL' },
     { id: 'LIN-0250', sem: 4, nom: 'Liderazgo y Dinámica de Grupos', pre: ['ADM-0120'], carrera: 'COMERCIAL' },
     { id: 'ECO-0200', sem: 4, nom: 'Macroeconomía', pre: ['ECO-0120'], carrera: 'COMERCIAL' },
@@ -210,9 +210,9 @@ const todasLasMaterias = [
     { id: 'PSI-0111', sem: 3, nom: 'Psicología Social II', pre: ['PSI-0110'], carrera: 'PSICOLOGIA' },
     { id: 'PSI-0250', sem: 3, nom: 'Etnopsicología', pre: ['SOC-0110'], carrera: 'PSICOLOGIA' },
     { id: 'ADM-0100', sem: 3, nom: 'Administración I', pre: ['LIN-0110'], carrera: 'PSICOLOGIA' },
-    { id: 'PSI-0145', sem: 3, nom: 'Desarrollo Evolutivo', pre: ['PSI-0125'], carrera: 'PSICOLOGIA' },
+    { id: 'PSI-0145', sem: 3, nom: 'Desarrollo Evolutivo I', pre: ['PSI-0125'], carrera: 'PSICOLOGIA' },
     { id: 'PSI-0140', sem: 3, nom: 'Psicología Experimental', pre: ['PSI-0130'], carrera: 'PSICOLOGIA' },
-    { id: 'PSI-0160', sem: 3, nom: 'Psicología Aprendizaje', pre: ['PSI-0130'], carrera: 'PSICOLOGIA' },
+    { id: 'PSI-0160', sem: 3, nom: 'Psicología del Aprendizaje', pre: ['PSI-0130'], carrera: 'PSICOLOGIA' },
 
     { id: 'PSI-0200', sem: 4, nom: 'Psicología Comunicacional', pre: ['PSI-0111'], carrera: 'PSICOLOGIA' },
     { id: 'PSI-0260', sem: 4, nom: 'Psicología Sistémica', pre: ['PSI-0111'], carrera: 'PSICOLOGIA' },
@@ -236,7 +236,7 @@ const todasLasMaterias = [
     { id: 'PSI-0240', sem: 6, nom: 'Técnicas Proyectivas I', pre: ['PSI-0180'], carrera: 'PSICOLOGIA' },
     { id: 'PSI-0320', sem: 6, nom: 'Entrevistas Psicológicas', pre: ['PSI-0171'], carrera: 'PSICOLOGIA' },
 
-    { id: 'ADM-0140', sem: 7, nom: 'Gestión Recursos Humanos', pre: ['LIN-0250'], carrera: 'PSICOLOGIA' },
+    { id: 'ADM-0140', sem: 7, nom: 'Gestión de Recursos Humanos', pre: ['LIN-0250'], carrera: 'PSICOLOGIA' },
     { id: 'ELE-0100', sem: 7, nom: 'Electiva 1', pre: [], carrera: 'PSICOLOGIA', tipo: 'electiva' },
     { id: 'INV-0110', sem: 7, nom: 'Métodos y Técnicas de Investigación Aplicada', pre: ['MAT-0200'], carrera: 'PSICOLOGIA' },
     { id: 'ELE-0200', sem: 7, nom: 'Electiva 2', pre: [], carrera: 'PSICOLOGIA', tipo: 'electiva' },
@@ -247,7 +247,7 @@ const todasLasMaterias = [
     { id: 'ADM-0420', sem: 8, nom: 'Emprendedurismo', pre: ['LIN-0250'], carrera: 'PSICOLOGIA' },
     { id: 'ELE-0300', sem: 8, nom: 'Electiva 3', pre: [], carrera: 'PSICOLOGIA', tipo: 'electiva' },
     { id: 'PSI-0242', sem: 8, nom: 'Técnicas Proyectivas III', pre: ['PSI-0241'], carrera: 'PSICOLOGIA' },
-    { id: 'PSI-0410', sem: 8, nom: 'Psicodiagnóstico', pre: ['PSI-0410'], carrera: 'PSICOLOGIA' },
+    { id: 'PSI-0410', sem: 8, nom: 'Psicodiagnóstico', pre: ['PSI-0400'], carrera: 'PSICOLOGIA' },
     { id: 'PSI-0401', sem: 8, nom: 'Clínica II', pre: ['PSI-0400'], carrera: 'PSICOLOGIA' },
 
     // ==========================================
@@ -297,7 +297,7 @@ const todasLasMaterias = [
 
     { id: 'DER-0310', sem: 7, nom: 'Procedimiento Civil', pre: ['DER-0304'], carrera: 'DERECHO' },
     { id: 'DER-0430', sem: 7, nom: 'Procedimiento Penal', pre: ['DER-0402'], carrera: 'DERECHO' },
-    { id: 'DER-0280', sem: 7, nom: 'Derecho Internacional Privado', pre: ['DER-0331'], carrera: 'DERECHO' },
+    { id: 'DER-0280', sem: 7, nom: 'Derecho Internacional Privado', pre: ['DER-0270'], carrera: 'DERECHO' },
     { id: 'DER-0335', sem: 7, nom: 'Derecho y Procedimiento Tributario', pre: ['DER-0331'], carrera: 'DERECHO' },
     { id: 'DER-0215', sem: 7, nom: 'Procedimiento Constitucional', pre: ['DER-0211'], carrera: 'DERECHO' },
     { id: 'LIN-0115', sem: 7, nom: 'Gramatica y Argumentación Jurídica', pre: ['LIN-0110'], carrera: 'DERECHO' },
@@ -338,7 +338,7 @@ const todasLasMaterias = [
     { id: 'ADM-0140', sem: 4, nom: 'Gestión de Recursos Humanos', pre: ['ADM-0120'], carrera: 'ADMINISTRACION' },
     { id: 'LIN-0250', sem: 4, nom: 'Liderazgo y Dinámica de Grupos', pre: ['ADM-0120'], carrera: 'ADMINISTRACION' },
     { id: 'ECO-0200', sem: 4, nom: 'Macroeconomía', pre: ['ECO-0120'], carrera: 'ADMINISTRACION' },
-    { id: 'ADM-0300', sem: 4, nom: 'Finanzas Empresariales I', pre: ['ECO-0120'], carrera: 'ADMINISTRACION' },
+    { id: 'ADM-0300', sem: 4, nom: 'Finanzas Empresariales I', pre: ['CPA-0200'], carrera: 'ADMINISTRACION' },
 
     { id: 'DER-0330', sem: 5, nom: 'Derecho Comercial I', pre: ['CPA-0300'], carrera: 'ADMINISTRACION' },
     { id: 'MAT-0300', sem: 5, nom: 'Investigación Operativa I', pre: ['MAT-0210'], carrera: 'ADMINISTRACION' },
@@ -351,13 +351,13 @@ const todasLasMaterias = [
     { id: 'ADM-0250', sem: 6, nom: 'Planificación de Marketing', pre: ['ADM-0210'], carrera: 'ADMINISTRACION' },
     { id: 'ADM-0220', sem: 6, nom: 'Producto', pre: ['ADM-0210'], carrera: 'ADMINISTRACION' },
     { id: 'ADM-0230', sem: 6, nom: 'Precio', pre: ['ADM-0210'], carrera: 'ADMINISTRACION' },
-    { id: 'IND-0100', sem: 6, nom: 'Producción y Manofactura Flexible I', pre: ['CPA-0200'], carrera: 'ADMINISTRACION' },
+    { id: 'IND-0100', sem: 6, nom: 'Producción y Manufactura Flexible I', pre: ['CPA-0200'], carrera: 'ADMINISTRACION' },
     { id: 'ADM-0320', sem: 6, nom: 'Finanzas Empresariales III', pre: ['ADM-0310'], carrera: 'ADMINISTRACION' },
 
     { id: 'IND-0300', sem: 7, nom: 'Gestión de la Calidad I', pre: ['MAT-0300'], carrera: 'ADMINISTRACION' },
     { id: 'ADM-0400', sem: 7, nom: 'Administración Publica', pre: ['ADM-0140'], carrera: 'ADMINISTRACION' },
     { id: 'ADM-0260', sem: 7, nom: 'Plaza', pre: ['ADM-0210'], carrera: 'ADMINISTRACION' },
-    { id: 'INV-0101', sem: 7, nom: 'Producción y Manofactura Flexible II', pre: ['INV-0100'], carrera: 'ADMINISTRACION' },
+    { id: 'INV-0101', sem: 7, nom: 'Producción y Manufactura Flexible II', pre: ['IND-0100'], carrera: 'ADMINISTRACION' },
     { id: 'ADM-0410', sem: 7, nom: 'Responsabilidad Social Empresarial', pre: ['LIN-0250'], carrera: 'ADMINISTRACION' },
     { id: 'IND-0400', sem: 7, nom: 'Preparación y Evaluación de Proyectos I', pre: ['ADM-0320'], carrera: 'ADMINISTRACION' },
 
@@ -416,7 +416,7 @@ const todasLasMaterias = [
     { id: 'COM-0350', sem: 6, nom: 'Proyectos de Desarrollo Social en Comunicación', pre: ['INV-0110'], carrera: 'COMUNICACION' },
 
 
-    { id: 'COM-0220', sem: 7, nom: 'Redacción y Difusión de Materiales Impresos', pre: ['COM-0210'], carrera: 'COMUNICACION' },
+    { id: 'COM-0220', sem: 7, nom: 'Producción y Difusión de Materiales Impresos', pre: ['COM-0210'], carrera: 'COMUNICACION' },
     { id: 'REL-0350', sem: 7, nom: 'Community Manager', pre: ['COM-0207'], carrera: 'COMUNICACION' },
     { id: 'COM-0250', sem: 7, nom: 'Producción Radiofónica', pre: ['COM-0231'], carrera: 'COMUNICACION' },
     { id: 'COM-0240', sem: 7, nom: 'Cine y Guionaje', pre: ['COM-0231'], carrera: 'COMUNICACION' },
@@ -449,7 +449,7 @@ const todasLasMaterias = [
     
     { id: 'MAT-0200', sem: 3, nom: 'Estadística Descriptiva', pre: ['MAT-0120'], carrera: 'CONTADURIA' },
     { id: 'MAT-0130', sem: 3, nom: 'Matemática Financiera', pre: ['MAT-0120'], carrera: 'CONTADURIA' },
-    { id: 'DER-250', sem: 3, nom: 'Derecho Laboral y Social', pre: ['DER-0330'], carrera: 'CONTADURIA' },
+    { id: 'DER-0250', sem: 3, nom: 'Derecho Laboral y Social', pre: ['DER-0330'], carrera: 'CONTADURIA' },
     { id: 'ADM-0130', sem: 3, nom: 'Organización y Sistemas', pre: ['ADM-0110'], carrera: 'CONTADURIA' },
     { id: 'ECO-0200', sem: 3, nom: 'Macroeconomia', pre: ['ECO-0110'], carrera: 'CONTADURIA' },
     { id: 'CPA-0120', sem: 3, nom: 'Contabilidad Empresarial III', pre: ['CPA-0110'], carrera: 'CONTADURIA' },
@@ -464,7 +464,7 @@ const todasLasMaterias = [
     { id: 'ADM-0300', sem: 5, nom: 'Finanzas Empresariales I', pre: ['MAT-0130'], carrera: 'CONTADURIA' },
     { id: 'CPA-0310', sem: 5, nom: 'Tributación Aplicada II', pre: ['CPA-0300'], carrera: 'CONTADURIA' },
     { id: 'CPA-0210', sem: 5, nom: 'Contabilidad de Costos II', pre: ['CPA-0200'], carrera: 'CONTADURIA' },
-    { id: 'CPA-0360', sem: 5, nom: 'Contabilidad Minera', pre: ['CPA-0130'], carrera: 'CONTADURIA' },
+    { id: 'CPA-0360', sem: 5, nom: 'Contabilidad Minera', pre: ['CPA-0340'], carrera: 'CONTADURIA' },
     { id: 'CPA-0350', sem: 5, nom: 'Contabilidad de Entidades Financieras', pre: ['CPA-0130'], carrera: 'CONTADURIA' },
     { id: 'CPA-0140', sem: 5, nom: 'Contabilidad Superior', pre: ['CPA-0130'], carrera: 'CONTADURIA' },
    
@@ -540,7 +540,7 @@ const todasLasMaterias = [
     { id: 'PET-0340', sem: 7, nom: 'Técnicas de Perforación de Pozos', pre: ['PET-0320'], carrera: 'PETROLERA' },
     { id: 'PET-0220', sem: 7, nom: 'Caracterización Estatica de Yacimientos', pre: ['PET-0210'], carrera: 'PETROLERA' },
     { id: 'ADM-0420', sem: 7, nom: 'Emprendedurismo', pre: ['ECO-0235'], carrera: 'PETROLERA' },
-    { id: 'PET-0290', sem: 7, nom: 'Transporte y Almacenaje de Hidrocarburos', pre: ['IGP606'], carrera: 'PETROLERA' },
+    { id: 'PET-0290', sem: 7, nom: 'Transporte y Almacenaje de Hidrocarburos', pre: ['pet-0280'], carrera: 'PETROLERA' },
     
     { id: 'PET-0430', sem: 8, nom: 'Conducción y Manejo de la Producción de Hidrocarburos', pre: ['PET-0420'], carrera: 'PETROLERA' },
     { id: 'IND-0320', sem: 8, nom: 'Seguridad e Higiene Ocupacional', pre: ['MAB-0100'], carrera: 'PETROLERA' },
@@ -589,7 +589,7 @@ const todasLasMaterias = [
     
     { id: 'IND-0120', sem: 5, nom: 'Ingeniería de Métodos y Ergonomía', pre: ['IND-0300'], carrera: 'INDUSTRIAL' },
     { id: 'INV-0110', sem: 5, nom: 'Métodos y Técnicas de Investigación Aplicada', pre: ['INV-0110'], carrera: 'INDUSTRIAL' },
-    { id: 'PII503', sem: 5, nom: 'Construcciones e Instalaciones Industriales', pre: ['PII304'], carrera: 'INDUSTRIAL' },
+    { id: 'PII503', sem: 5, nom: 'Construcciones e Instalaciones Industriales', pre: ['MAT-0210'], carrera: 'INDUSTRIAL' },
     { id: 'PII504', sem: 5, nom: 'Temodinámica', pre: ['PII405'], carrera: 'INDUSTRIAL' },
     { id: 'PII505', sem: 5, nom: 'Operaciones Unitarias I', pre: ['PII406'], carrera: 'INDUSTRIAL' },
     { id: 'PII506', sem: 5, nom: 'Producción y Manufactura Flexible II', pre: ['PII406'], carrera: 'INDUSTRIAL' },
