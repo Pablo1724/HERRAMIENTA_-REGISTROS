@@ -27,7 +27,7 @@ const todasLasMaterias = [
     { id: 'RED-0100', sem: 4, nom: 'Redes I', pre: ['ELC-0110'], carrera: 'REDES' },
     { id: 'TEL-0100', sem: 4, nom: 'Campos Electromagnéticos', pre: ['FIS-0200'], carrera: 'REDES' },
     { id: 'TEL-0200', sem: 4, nom: 'Análisis de Sistemas y Señales', pre: ['FIS-0200'], carrera: 'REDES' },
-    { id: 'MAT-0200', sem: 4, nom: 'Estadística Descriptiva', pre: ['MAT-0110'], carrera: 'REDES' },
+    { id: 'MAT-0200', sem: 4, nom: 'Estadística Descriptiva', pre: ['MAT-0100'], carrera: 'REDES' },
     { id: 'SIS-0125', sem: 4, nom: 'Base de Datos I', pre: ['SIS-0122'], carrera: 'REDES' },
 
     { id: 'ELC-0201', sem: 5, nom: 'Circuitos Eléctricos II', pre: ['ELC-0200'], carrera: 'REDES' },
@@ -46,7 +46,7 @@ const todasLasMaterias = [
 
     { id: 'RED-0140', sem: 7, nom: 'Redes III', pre: ['RED-0130'], carrera: 'REDES' },
     { id: 'RED-0220', sem: 7, nom: 'Seguridad en Redes', pre: ['RED-0130'], carrera: 'REDES' },
-    { id: 'RED-0210', sem: 7, nom: 'Tecnologías Inalámbricas', pre: ['RED-0210'], carrera: 'REDES'},
+    { id: 'RED-0210', sem: 7, nom: 'Tecnologías Inalámbricas', pre: ['RED-0130'], carrera: 'REDES'},
     { id: 'TEL-0320', sem: 7, nom: 'Antenas y Propagación', pre: ['TEL-0300'], carrera: 'REDES' },
     { id: 'ELE-0100', sem: 7, nom: 'Electiva 1', pre: [], carrera: 'REDES', tipo: 'electiva'},
     { id: 'ELE-0200', sem: 7, nom: 'Electiva 2', pre: [], carrera: 'REDES', tipo: 'electiva'},
@@ -68,19 +68,19 @@ const todasLasMaterias = [
     // ==========================================
     // CARRERA: INGENIERÍA DE SISTEMAS
     // ==========================================
-    { id: 'SIS101', sem: 1, nom: 'Estructuras Discretas', pre: [], carrera: 'SISTEMAS' },
-    { id: 'SIS102', sem: 1, nom: 'Fundamentos de Matemáticas', pre: [], carrera: 'SISTEMAS' },
-    { id: 'SIS103', sem: 1, nom: 'Técnicas de Investigación', pre: [], carrera: 'SISTEMAS' },
-    { id: 'SIS104', sem: 1, nom: 'Programación Básica', pre: [], carrera: 'SISTEMAS' },
-    { id: 'SIS105', sem: 1, nom: 'Hardware y Software', pre: [], carrera: 'SISTEMAS' },
-    { id: 'SIS106', sem: 1, nom: 'Inglés I', pre: [], carrera: 'SISTEMAS' },
+    { id: 'MAT-0125', sem: 1, nom: 'Estructuras Discretas', pre: [], carrera: 'SISTEMAS' },
+    { id: 'MAT-0100', sem: 1, nom: 'Fundamentos de Matemáticas', pre: [], carrera: 'SISTEMAS' },
+    { id: 'INV-0100', sem: 1, nom: 'Técnicas de Investigación', pre: [], carrera: 'SISTEMAS' },
+    { id: 'SIS-0120', sem: 1, nom: 'Programación Básica', pre: [], carrera: 'SISTEMAS' },
+    { id: 'ELC-0100', sem: 1, nom: 'Hardware y Software', pre: [], carrera: 'SISTEMAS' },
+    { id: 'LIN-0200', sem: 1, nom: 'Inglés I', pre: [], carrera: 'SISTEMAS' },
 
-    { id: 'SIS201', sem: 2, nom: 'Sistemas Digitales I', pre: ['SIS101'], carrera: 'SISTEMAS' },
-    { id: 'SIS202', sem: 2, nom: 'Física I', pre: ['SIS102'], carrera: 'SISTEMAS' },
-    { id: 'SIS203', sem: 2, nom: 'Álgebra Lineal', pre: ['SIS102'], carrera: 'SISTEMAS' },
-    { id: 'SIS204', sem: 2, nom: 'Programación I', pre: ['SIS104'], carrera: 'SISTEMAS' },
-    { id: 'SIS205', sem: 2, nom: 'Sistemas Operativos I', pre: ['SIS104'], carrera: 'SISTEMAS' },
-    { id: 'SIS206', sem: 2, nom: 'Deontología y Prosocialidad', pre: [], carrera: 'SISTEMAS' },
+    { id: 'ELC-0110', sem: 2, nom: 'Sistemas Digitales I', pre: ['MAT-0125'], carrera: 'SISTEMAS' },
+    { id: 'FIS-0100', sem: 2, nom: 'Física I', pre: ['MAT-0100'], carrera: 'SISTEMAS' },
+    { id: 'MAT-0110', sem: 2, nom: 'Álgebra Lineal', pre: ['MAT-0100'], carrera: 'SISTEMAS' },
+    { id: 'SIS-0121', sem: 2, nom: 'Programación I', pre: ['SIS-0120'], carrera: 'SISTEMAS' },
+    { id: 'SIS-0200', sem: 2, nom: 'Sistemas Operativos I', pre: ['SIS-0120'], carrera: 'SISTEMAS' },
+    { id: 'LIN-0110', sem: 2, nom: 'Deontología y Prosocialidad', pre: [], carrera: 'SISTEMAS' },
 
     { id: 'SIS301', sem: 3, nom: 'Sistemas Digitales II', pre: ['SIS201'], carrera: 'SISTEMAS' },
     { id: 'SIS302', sem: 3, nom: 'Cálculo I', pre: ['SIS102'], carrera: 'SISTEMAS' },
